@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Colors */
+  /* Colors - Light Mode */
   --background: #ffffff;
   --foreground: #1a1a2e;
   --primary: #1a1a2e;
@@ -12,9 +12,10 @@
   --muted: #f9fafb;
   --border: #e5e7eb;
   --border-light: #f3f4f6;
+  --card-bg: #ffffff;
 
   /* Grid */
-  --grid-color: rgba(0, 0, 0, 0.08);
+  --grid-color: rgba(0, 0, 0, 0.06);
   --grid-size: 80px;
 
   /* Project card gradients */

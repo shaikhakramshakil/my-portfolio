@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Experience from "@/components/Experience";
+import Certifications from "@/components/Certifications";
 import Projects from "@/components/Projects";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -11,8 +11,8 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Experience />
         <Projects />
+        <Certifications />
         <CTA />
       </main>
       <Footer />

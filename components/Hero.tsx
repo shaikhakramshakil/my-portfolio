@@ -1,45 +1,135 @@
 "use client";
 
-import { personalInfo, techStack } from "@/lib/data";
+import { personalInfo } from "@/lib/data";
 import {
     SiFlutter,
     SiReact,
     SiNextdotjs,
     SiPython,
-    SiGooglecloud,
     SiFirebase,
     SiTypescript,
-    SiTailwindcss
+    SiTailwindcss,
+    SiGit,
+    SiJavascript,
+    SiGithub,
+    SiDocker,
+    SiFigma,
+    SiVercel,
+    SiGooglecloud,
+    SiMongodb,
+    SiPostgresql,
+    SiDart,
+    SiAndroid,
+    SiHtml5,
+    SiCss3,
+    SiFastapi,
 } from "react-icons/si";
+import { IconType } from "react-icons";
 
-// Tech icon mapping
-const iconComponents: { [key: string]: React.ComponentType<{ size?: number; color?: string }> } = {
-    flutter: SiFlutter,
-    react: SiReact,
-    nextjs: SiNextdotjs,
-    python: SiPython,
-    gcp: SiGooglecloud,
-    firebase: SiFirebase,
-    typescript: SiTypescript,
-    tailwindcss: SiTailwindcss,
-};
+// All tech icons with their colors
+const techIcons: { icon: IconType; color: string; name: string }[] = [
+    { icon: SiReact, color: "#61DAFB", name: "React" },
+    { icon: SiNextdotjs, color: "#000000", name: "Next.js" },
+    { icon: SiTypescript, color: "#3178C6", name: "TypeScript" },
+    { icon: SiJavascript, color: "#F7DF1E", name: "JavaScript" },
+    { icon: SiHtml5, color: "#E34F26", name: "HTML5" },
+    { icon: SiCss3, color: "#1572B6", name: "CSS3" },
+    { icon: SiTailwindcss, color: "#06B6D4", name: "Tailwind" },
+    { icon: SiPython, color: "#3776AB", name: "Python" },
+    { icon: SiFastapi, color: "#009688", name: "FastAPI" },
+    { icon: SiFlutter, color: "#02569B", name: "Flutter" },
+    { icon: SiDart, color: "#0175C2", name: "Dart" },
+    { icon: SiAndroid, color: "#3DDC84", name: "Android" },
+    { icon: SiFirebase, color: "#FFCA28", name: "Firebase" },
+    { icon: SiGooglecloud, color: "#4285F4", name: "GCP" },
+    { icon: SiMongodb, color: "#47A248", name: "MongoDB" },
+    { icon: SiPostgresql, color: "#4169E1", name: "PostgreSQL" },
+    { icon: SiGit, color: "#F05032", name: "Git" },
+    { icon: SiGithub, color: "#181717", name: "GitHub" },
+    { icon: SiDocker, color: "#2496ED", name: "Docker" },
+    { icon: SiVercel, color: "#000000", name: "Vercel" },
+    { icon: SiFigma, color: "#F24E1E", name: "Figma" },
+];
 
-const iconColors: { [key: string]: string } = {
-    flutter: "#02569B",
-    react: "#61DAFB",
-    nextjs: "#000000",
-    python: "#3776AB",
-    gcp: "#4285F4",
-    firebase: "#FFCA28",
-    typescript: "#3178C6",
-    tailwindcss: "#06B6D4",
-};
+// Infinite Carousel Component - Icons only, bigger
+function TechCarousel() {
+    const duplicatedIcons = [...techIcons, ...techIcons];
+
+    return (
+        <div
+            style={{
+                width: "100%",
+                maxWidth: "900px",
+                margin: "0 auto",
+                overflow: "hidden",
+                maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+                WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+            }}
+        >
+            <div
+                className="carousel-track"
+                style={{
+                    display: "flex",
+                    gap: "24px",
+                    width: "fit-content",
+                }}
+            >
+                {duplicatedIcons.map((tech, index) => {
+                    const Icon = tech.icon;
+
+                    return (
+                        <div
+                            key={`${tech.name}-${index}`}
+                            title={tech.name}
+                            style={{
+                                flexShrink: 0,
+                                width: "72px",
+                                height: "72px",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                background: "white",
+                                borderRadius: "18px",
+                                border: "1px solid var(--border)",
+                                boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                                transition: "transform 0.2s, box-shadow 0.2s",
+                                cursor: "pointer",
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = "scale(1.1)";
+                                e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.1)";
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = "scale(1)";
+                                e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.04)";
+                            }}
+                        >
+                            <Icon size={36} color={tech.color} />
+                        </div>
+                    );
+                })}
+            </div>
+
+            <style jsx global>{`
+        .carousel-track {
+          animation: scroll 50s linear infinite;
+        }
+        .carousel-track:hover {
+          animation-play-state: paused;
+        }
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
+        </div>
+    );
+}
 
 export default function Hero() {
     return (
         <section
             id="hero"
-            className="grid-background"
             style={{
                 minHeight: "100vh",
                 display: "flex",
@@ -61,10 +151,11 @@ export default function Hero() {
                         alignItems: "center",
                         gap: "8px",
                         padding: "8px 16px",
-                        background: "var(--muted)",
+                        background: "white",
                         borderRadius: "100px",
                         marginBottom: "32px",
                         border: "1px solid var(--border)",
+                        boxShadow: "var(--shadow-sm)",
                     }}
                 >
                     <span style={{
@@ -140,7 +231,7 @@ export default function Hero() {
                         gap: "16px",
                         justifyContent: "center",
                         flexWrap: "wrap",
-                        marginBottom: "64px",
+                        marginBottom: "48px",
                     }}
                 >
                     <a href="#work" className="btn btn-primary">
@@ -154,87 +245,21 @@ export default function Hero() {
                     </a>
                 </div>
 
-                {/* Tech Stack */}
+                {/* Tech Stack Carousel - Icons Only */}
                 <div className="animate-fade-in-up animation-delay-500">
                     <p
                         style={{
                             fontSize: "11px",
-                            letterSpacing: "3px",
+                            letterSpacing: "2px",
                             textTransform: "uppercase",
                             color: "var(--secondary)",
                             marginBottom: "20px",
                             fontWeight: 600,
                         }}
                     >
-                        Tech Stack & Tools
+                        Tech Stack
                     </p>
-                    <div
-                        style={{
-                            display: "flex",
-                            gap: "12px",
-                            justifyContent: "center",
-                            flexWrap: "wrap",
-                        }}
-                    >
-                        {techStack.map((tech, index) => {
-                            const IconComponent = iconComponents[tech.icon || ""];
-                            const color = iconColors[tech.icon || ""] || "#64748b";
-
-                            return (
-                                <div
-                                    key={tech.name}
-                                    className={`tech-icon animate-fade-in animation-delay-${Math.min((index + 1) * 100, 600)}`}
-                                    title={tech.name}
-                                    style={{ cursor: "pointer" }}
-                                >
-                                    {IconComponent ? (
-                                        <IconComponent size={24} color={color} />
-                                    ) : (
-                                        <span style={{ fontSize: "12px", fontWeight: 600 }}>{tech.name.substring(0, 2)}</span>
-                                    )}
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </div>
-
-            {/* Scroll indicator */}
-            <div
-                className="animate-fade-in animation-delay-600"
-                style={{
-                    position: "absolute",
-                    bottom: "40px",
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: "8px",
-                    color: "var(--secondary)",
-                }}
-            >
-                <span style={{ fontSize: "12px", fontWeight: 500 }}>Scroll</span>
-                <div
-                    style={{
-                        width: "24px",
-                        height: "40px",
-                        borderRadius: "12px",
-                        border: "2px solid var(--border)",
-                        display: "flex",
-                        justifyContent: "center",
-                        paddingTop: "8px",
-                    }}
-                >
-                    <div
-                        style={{
-                            width: "4px",
-                            height: "8px",
-                            borderRadius: "2px",
-                            background: "var(--secondary)",
-                            animation: "scrollBounce 1.5s infinite",
-                        }}
-                    />
+                    <TechCarousel />
                 </div>
             </div>
 
@@ -242,10 +267,6 @@ export default function Hero() {
         @keyframes pulse {
           0%, 100% { opacity: 1; }
           50% { opacity: 0.5; }
-        }
-        @keyframes scrollBounce {
-          0%, 100% { transform: translateY(0); opacity: 1; }
-          50% { transform: translateY(6px); opacity: 0.5; }
         }
       `}</style>
         </section>

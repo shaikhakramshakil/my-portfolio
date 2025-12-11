@@ -17,7 +17,7 @@ export default function Footer() {
             style={{
                 borderTop: "1px solid var(--border)",
                 padding: "48px 0",
-                background: "white",
+                background: "var(--background)",
             }}
         >
             <div className="container">
