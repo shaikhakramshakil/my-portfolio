@@ -54,28 +54,28 @@ export default function Blog() {
                                     flexDirection: "column",
                                     height: "100%",
                                     cursor: "pointer",
-                                    borderRadius: "20px",
+                                    borderRadius: "16px",
                                     overflow: "hidden",
                                     background: "white",
-                                    border: "1px solid var(--border)",
+                                    border: "2px solid var(--border)",
                                     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                                    transform: hoveredId === article.id ? "translateY(-8px)" : "translateY(0)",
+                                    transform: hoveredId === article.id ? "translateY(-4px)" : "translateY(0)",
                                     boxShadow: hoveredId === article.id 
-                                        ? "0 20px 40px rgba(0,0,0,0.12)" 
-                                        : "0 4px 12px rgba(0,0,0,0.04)",
+                                        ? "0 15px 40px rgba(59,130,246,0.12)" 
+                                        : "0 4px 20px rgba(0,0,0,0.04)",
                                 }}
                             >
                                 {/* Content */}
                                 <div
                                     style={{
-                                        padding: "24px",
+                                        padding: "28px",
                                         display: "flex",
                                         flexDirection: "column",
-                                        gap: "14px",
+                                        gap: "16px",
                                         flex: 1,
                                     }}
                                 >
-                                    {/* Top Row - Read Time */}
+                                    {/* Read Time Badge */}
                                     <div
                                         style={{
                                             display: "flex",
@@ -85,15 +85,19 @@ export default function Blog() {
                                     >
                                         <span
                                             style={{
-                                                fontSize: "11px",
+                                                fontSize: "12px",
                                                 fontWeight: 500,
                                                 color: "var(--secondary)",
                                                 display: "flex",
                                                 alignItems: "center",
-                                                gap: "4px",
+                                                gap: "6px",
+                                                padding: "6px 12px",
+                                                background: "var(--muted)",
+                                                borderRadius: "20px",
+                                                border: "1px solid var(--border)",
                                             }}
                                         >
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <circle cx="12" cy="12" r="10" />
                                                 <polyline points="12 6 12 12 16 14" />
                                             </svg>
@@ -104,12 +108,17 @@ export default function Blog() {
                                     {/* Title */}
                                     <h3
                                         style={{
-                                            fontSize: "17px",
+                                            fontSize: "18px",
                                             fontWeight: 700,
                                             color: "var(--primary)",
                                             lineHeight: 1.4,
-                                            letterSpacing: "-0.02em",
+                                            letterSpacing: "-0.03em",
                                             transition: "color 0.2s ease",
+                                            minHeight: "50px",
+                                            display: "-webkit-box",
+                                            WebkitLineClamp: 2,
+                                            WebkitBoxOrient: "vertical",
+                                            overflow: "hidden",
                                         }}
                                     >
                                         {article.title}
@@ -118,7 +127,7 @@ export default function Blog() {
                                     {/* Excerpt */}
                                     <p
                                         style={{
-                                            fontSize: "13px",
+                                            fontSize: "14px",
                                             color: "var(--secondary)",
                                             lineHeight: 1.7,
                                             display: "-webkit-box",
@@ -126,6 +135,7 @@ export default function Blog() {
                                             WebkitBoxOrient: "vertical",
                                             overflow: "hidden",
                                             flex: 1,
+                                            minHeight: "42px",
                                         }}
                                     >
                                         {article.excerpt}
@@ -136,7 +146,7 @@ export default function Blog() {
                                         style={{
                                             display: "flex",
                                             flexWrap: "wrap",
-                                            gap: "6px",
+                                            gap: "8px",
                                         }}
                                     >
                                         {article.tags.slice(0, 3).map((tag) => (
@@ -144,11 +154,11 @@ export default function Blog() {
                                                 key={tag}
                                                 style={{
                                                     fontSize: "11px",
-                                                    fontWeight: 500,
-                                                    padding: "4px 10px",
-                                                    background: "var(--muted)",
+                                                    fontWeight: 600,
+                                                    padding: "6px 12px",
+                                                    background: "#f1f5f9",
                                                     borderRadius: "6px",
-                                                    color: "var(--secondary)",
+                                                    color: "#475569",
                                                     transition: "all 0.2s ease",
                                                 }}
                                             >
@@ -163,18 +173,19 @@ export default function Blog() {
                                             display: "flex",
                                             alignItems: "center",
                                             justifyContent: "space-between",
-                                            paddingTop: "14px",
-                                            borderTop: "1px solid var(--border-light)",
+                                            paddingTop: "16px",
+                                            borderTop: "1px solid var(--border)",
                                             marginTop: "auto",
                                         }}
                                     >
                                         <span
                                             style={{
-                                                fontSize: "12px",
+                                                fontSize: "13px",
                                                 color: "var(--secondary)",
                                                 display: "flex",
                                                 alignItems: "center",
                                                 gap: "6px",
+                                                fontWeight: 500,
                                             }}
                                         >
                                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -191,10 +202,10 @@ export default function Blog() {
                                             style={{
                                                 display: "flex",
                                                 alignItems: "center",
-                                                gap: "4px",
-                                                fontSize: "12px",
+                                                gap: "6px",
+                                                fontSize: "13px",
                                                 fontWeight: 600,
-                                                color: hoveredId === article.id ? "var(--accent)" : "var(--secondary)",
+                                                color: hoveredId === article.id ? "#3b82f6" : "var(--secondary)",
                                                 transition: "all 0.2s ease",
                                             }}
                                         >
@@ -205,7 +216,7 @@ export default function Blog() {
                                                 viewBox="0 0 24 24" 
                                                 fill="none" 
                                                 stroke="currentColor" 
-                                                strokeWidth="2"
+                                                strokeWidth="2.5"
                                                 style={{
                                                     transform: hoveredId === article.id ? "translateX(4px)" : "translateX(0)",
                                                     transition: "transform 0.2s ease",

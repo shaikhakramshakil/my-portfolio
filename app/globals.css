@@ -295,20 +295,22 @@ h6 {
   border-radius: 16px;
   overflow: hidden;
   transition: all var(--transition-base);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .project-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-xl);
-  border-color: transparent;
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+  border-color: #3b82f6;
 }
 
 .project-card .preview {
-  height: 140px;
+  height: 180px;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid var(--border);
 }
 
 .project-card .preview::after {

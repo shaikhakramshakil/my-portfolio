@@ -28,6 +28,7 @@ export interface Project {
   features: string[];
   challenges?: string;
   outcome?: string;
+  image?: string;
 }
 
 export interface Certification {
@@ -116,6 +117,7 @@ export const projects: Project[] = [
     tags: ["Python", "FastAPI", "VS Code", "Kaggle"],
     gradient: "var(--gradient-yellow)",
     category: "tool",
+    image: "/proj img/zero-gpu.png",
     github: "https://github.com/shaikhakramshakil/Zero-GPU",
     featured: true,
     year: "2025",
@@ -139,6 +141,7 @@ export const projects: Project[] = [
     tags: ["Flutter", "Firebase", "Blockchain", "Gemini AI"],
     gradient: "var(--gradient-green)",
     category: "mobile",
+    image: "/proj img/Agritrace.png",
     github: "https://github.com/shaikhakramshakil/Agritrace",
     live: "https://github.com/shaikhakramshakil/Agritrace/releases/tag/V2.0.0",
     featured: true,
@@ -164,6 +167,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "PWA", "Google Cloud", "AI"],
     gradient: "var(--gradient-blue)",
     category: "web",
+    image: "/proj img/Jalshakti.png",
     github: "https://github.com/shaikhakramshakil/Jal-Shakti-App",
     live: "https://jal-shakti-app.vercel.app",
     featured: true,
@@ -189,6 +193,7 @@ export const projects: Project[] = [
     tags: ["Google Cloud", "AI", "PWA"],
     gradient: "var(--gradient-purple)",
     category: "web",
+    image: "/proj img/LegalEase.png",
     github: "https://github.com/shaikhakramshakil/Legal_ease",
     live: "https://studio--studio-6479684969-c3da6.us-central1.hosted.app/",
     featured: true,
@@ -214,6 +219,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Firebase", "Recharts"],
     gradient: "var(--gradient-pink)",
     category: "web",
+    image: "/proj img/Vidyalytics.png",
     github: "https://github.com/shaikhakramshakil/Vidyalytics",
     live: "https://vidyalytics.vercel.app",
     featured: false,
@@ -238,6 +244,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "Gemini AI", "Firebase", "PWA"],
     gradient: "var(--gradient-teal)",
     category: "web",
+    image: "/proj img/healthportal.png",
     github: "https://github.com/shaikhakramshakil/Health-Portal-AI",
     live: "https://healthportalai.netlify.app/",
     featured: false,
@@ -262,6 +269,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
     gradient: "var(--gradient-orange)",
     category: "web",
+    image: "/proj img/krishidhan.png",
     github: "https://github.com/shaikhakramshakil/krishidhan-website",
     live: "https://krishidhan.vercel.app",
     featured: false,
@@ -286,6 +294,7 @@ export const projects: Project[] = [
     tags: ["Python", "Flask", "Dialogflow", "Twilio"],
     gradient: "var(--gradient-red)",
     category: "tool",
+    image: "/proj img/healthbot.png",
     featured: false,
     year: "2025",
     status: "Completed",

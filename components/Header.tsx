@@ -57,7 +57,7 @@ export default function Header() {
             onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
           >
-            AKRAM
+            AKRAM SHAIKH
           </a>
 
           {/* Desktop Navigation */}

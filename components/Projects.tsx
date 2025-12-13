@@ -69,34 +69,62 @@ export default function Projects() {
                                 <div
                                     className="preview"
                                     style={{
-                                        background: project.gradient,
                                         position: "relative",
                                         display: "flex",
                                         alignItems: "center",
                                         justifyContent: "center",
+                                        overflow: "hidden",
+                                        background: project.image ? "#fafafa" : project.gradient,
                                     }}
                                 >
-                                    {/* Project Icon/Initial */}
-                                    <div
-                                        style={{
-                                            width: "56px",
-                                            height: "56px",
-                                            borderRadius: "16px",
-                                            background: "rgba(255,255,255,0.9)",
-                                            backdropFilter: "blur(10px)",
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center",
-                                            fontSize: "24px",
-                                            fontWeight: 700,
-                                            color: "var(--primary)",
-                                            boxShadow: "0 6px 24px rgba(0,0,0,0.1)",
-                                            transform: hoveredId === project.id ? "scale(1.1) rotate(-3deg)" : "scale(1)",
-                                            transition: "transform var(--transition-base)",
-                                        }}
-                                    >
-                                        {project.title.charAt(0)}
-                                    </div>
+                                    {/* Project Image or Initial */}
+                                    {project.image ? (
+                                        <>
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                style={{
+                                                    width: "100%",
+                                                    height: "100%",
+                                                    objectFit: "contain",
+                                                    objectPosition: "center",
+                                                    padding: "16px",
+                                                    transform: hoveredId === project.id ? "scale(1.03)" : "scale(1)",
+                                                    transition: "transform 0.4s ease",
+                                                }}
+                                            />
+                                            {/* Subtle gradient overlay */}
+                                            <div
+                                                style={{
+                                                    position: "absolute",
+                                                    inset: 0,
+                                                    background: "linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.03) 100%)",
+                                                    pointerEvents: "none",
+                                                }}
+                                            />
+                                        </>
+                                    ) : (
+                                        <div
+                                            style={{
+                                                width: "56px",
+                                                height: "56px",
+                                                borderRadius: "16px",
+                                                background: "rgba(255,255,255,0.9)",
+                                                backdropFilter: "blur(10px)",
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center",
+                                                fontSize: "24px",
+                                                fontWeight: 700,
+                                                color: "var(--primary)",
+                                                boxShadow: "0 6px 24px rgba(0,0,0,0.1)",
+                                                transform: hoveredId === project.id ? "scale(1.1) rotate(-3deg)" : "scale(1)",
+                                                transition: "transform var(--transition-base)",
+                                            }}
+                                        >
+                                            {project.title.charAt(0)}
+                                        </div>
+                                    )}
 
                                     {/* GitHub Link */}
                                     {project.github && (
@@ -157,28 +185,49 @@ export default function Projects() {
                                 </div>
 
                                 {/* Content */}
-                                <div style={{ padding: "16px" }}>
-                                    <h3
-                                        style={{
-                                            fontSize: "16px",
-                                            fontWeight: 600,
-                                            color: "var(--primary)",
-                                            marginBottom: "8px",
-                                            letterSpacing: "-0.02em",
-                                        }}
-                                    >
-                                        {project.title}
-                                    </h3>
+                                <div style={{ padding: "20px" }}>
+                                    <div style={{ marginBottom: "12px" }}>
+                                        <h3
+                                            style={{
+                                                fontSize: "17px",
+                                                fontWeight: 700,
+                                                color: "var(--primary)",
+                                                marginBottom: "6px",
+                                                letterSpacing: "-0.02em",
+                                                lineHeight: 1.3,
+                                            }}
+                                        >
+                                            {project.title}
+                                        </h3>
+                                        {/* Status badge */}
+                                        <span
+                                            style={{
+                                                display: "inline-block",
+                                                fontSize: "10px",
+                                                fontWeight: 600,
+                                                textTransform: "uppercase",
+                                                letterSpacing: "0.5px",
+                                                padding: "3px 8px",
+                                                borderRadius: "4px",
+                                                background: project.status === "Completed" ? "rgba(34,197,94,0.1)" : "rgba(59,130,246,0.1)",
+                                                color: project.status === "Completed" ? "#22c55e" : "#3b82f6",
+                                                border: `1px solid ${project.status === "Completed" ? "rgba(34,197,94,0.2)" : "rgba(59,130,246,0.2)"}`,
+                                            }}
+                                        >
+                                            {project.status}
+                                        </span>
+                                    </div>
                                     <p
                                         style={{
                                             fontSize: "13px",
                                             color: "var(--secondary)",
                                             lineHeight: 1.6,
-                                            marginBottom: "14px",
+                                            marginBottom: "16px",
                                             display: "-webkit-box",
                                             WebkitLineClamp: 2,
                                             WebkitBoxOrient: "vertical",
                                             overflow: "hidden",
+                                            minHeight: "40px",
                                         }}
                                     >
                                         {project.description}
@@ -190,13 +239,41 @@ export default function Projects() {
                                             display: "flex",
                                             flexWrap: "wrap",
                                             gap: "6px",
+                                            paddingTop: "12px",
+                                            borderTop: "1px solid var(--border)",
                                         }}
                                     >
                                         {project.tags.slice(0, 3).map((tag) => (
-                                            <span key={tag} className="tag" style={{ padding: "4px 10px", fontSize: "11px" }}>
+                                            <span 
+                                                key={tag} 
+                                                style={{
+                                                    padding: "5px 10px",
+                                                    fontSize: "11px",
+                                                    fontWeight: 600,
+                                                    background: "var(--muted)",
+                                                    border: "1px solid var(--border)",
+                                                    borderRadius: "6px",
+                                                    color: "var(--secondary)",
+                                                }}
+                                            >
                                                 {tag}
                                             </span>
                                         ))}
+                                        {project.tags.length > 3 && (
+                                            <span
+                                                style={{
+                                                    padding: "5px 10px",
+                                                    fontSize: "11px",
+                                                    fontWeight: 600,
+                                                    background: "transparent",
+                                                    border: "1px dashed var(--border)",
+                                                    borderRadius: "6px",
+                                                    color: "var(--secondary)",
+                                                }}
+                                            >
+                                                +{project.tags.length - 3}
+                                            </span>
+                                        )}
                                     </div>
                                 </div>
                             </article>

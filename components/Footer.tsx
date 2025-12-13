@@ -1,7 +1,7 @@
 "use client";
 
 import { personalInfo } from "@/lib/data";
-import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub, FaTwitter, FaMedium } from "react-icons/fa";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -10,6 +10,7 @@ export default function Footer() {
         { name: "LinkedIn", href: personalInfo.linkedin, icon: FaLinkedinIn },
         { name: "GitHub", href: personalInfo.github, icon: FaGithub },
         { name: "Twitter", href: personalInfo.twitter, icon: FaTwitter },
+        { name: "Medium", href: "https://medium.com/@akramshakil", icon: FaMedium },
     ];
 
     return (
@@ -40,8 +41,7 @@ export default function Footer() {
                             letterSpacing: "-0.5px",
                         }}
                     >
-                        AKRAM
-                    </a>
+                        AKRAM SHAIKH                    </a>
 
                     {/* Social Icons */}
                     <div
