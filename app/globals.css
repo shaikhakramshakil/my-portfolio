@@ -77,6 +77,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -0.01em;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, transparent 20%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.85) 75%, rgba(255, 255, 255, 1) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Grid Background */
@@ -277,7 +292,7 @@ h6 {
 
 /* Project cards */
 .project-card {
-  border-radius: 24px;
+  border-radius: 16px;
   overflow: hidden;
   transition: all var(--transition-base);
   border: 1px solid var(--border);
@@ -285,13 +300,13 @@ h6 {
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-xl);
   border-color: transparent;
 }
 
 .project-card .preview {
-  height: 220px;
+  height: 140px;
   position: relative;
   overflow: hidden;
 }
@@ -472,6 +487,22 @@ h6 {
 .experience-card:hover .company-initial {
   transform: scale(1.05);
   box-shadow: var(--shadow-sm);
+}
+
+/* Article card */
+.article-card {
+  position: relative;
+  border-radius: 16px;
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.article-card:hover h3 {
+  color: var(--accent);
 }
 
 /* Responsive */

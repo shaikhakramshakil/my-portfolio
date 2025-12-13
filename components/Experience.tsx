@@ -27,8 +27,8 @@ export default function Experience() {
                 <div
                     style={{
                         display: "grid",
-                        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-                        gap: "24px",
+                        gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+                        gap: "18px",
                     }}
                 >
                     {experiences.map((exp, index) => (
@@ -38,7 +38,8 @@ export default function Experience() {
                             style={{
                                 display: "flex",
                                 flexDirection: "column",
-                                gap: "20px",
+                                gap: "14px",
+                                padding: "20px",
                             }}
                         >
                             {/* Card Header */}
@@ -75,10 +76,10 @@ export default function Experience() {
                             <div>
                                 <h3
                                     style={{
-                                        fontSize: "18px",
+                                        fontSize: "15px",
                                         fontWeight: 600,
                                         color: "var(--primary)",
-                                        marginBottom: "6px",
+                                        marginBottom: "4px",
                                         letterSpacing: "-0.02em",
                                     }}
                                 >
@@ -86,7 +87,7 @@ export default function Experience() {
                                 </h3>
                                 <p
                                     style={{
-                                        fontSize: "14px",
+                                        fontSize: "13px",
                                         color: "var(--accent)",
                                         fontWeight: 500,
                                     }}
@@ -98,9 +99,13 @@ export default function Experience() {
                             {/* Description */}
                             <p
                                 style={{
-                                    fontSize: "14px",
+                                    fontSize: "13px",
                                     color: "var(--secondary)",
-                                    lineHeight: 1.7,
+                                    lineHeight: 1.6,
+                                    display: "-webkit-box",
+                                    WebkitLineClamp: 3,
+                                    WebkitBoxOrient: "vertical",
+                                    overflow: "hidden",
                                 }}
                             >
                                 {exp.description}
@@ -112,12 +117,12 @@ export default function Experience() {
                                     marginTop: "auto",
                                     display: "flex",
                                     alignItems: "center",
-                                    gap: "6px",
+                                    gap: "5px",
                                     color: "var(--secondary)",
-                                    fontSize: "13px",
+                                    fontSize: "12px",
                                 }}
                             >
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                                     <circle cx="12" cy="10" r="3" />
                                 </svg>

@@ -75,7 +75,7 @@ export default function CTA() {
                     }}
                 >
                     <a
-                        href="mailto:akramshakil@email.com"
+                        href="mailto:shaikhakramshakil@gmail.com"
                         className="btn btn-primary"
                         style={{
                             padding: "16px 32px",

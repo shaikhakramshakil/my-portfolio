@@ -47,8 +47,8 @@ export default function Projects() {
                 <div
                     style={{
                         display: "grid",
-                        gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))",
-                        gap: "24px",
+                        gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+                        gap: "20px",
                     }}
                 >
                     {filteredProjects.map((project, index) => (
@@ -79,18 +79,18 @@ export default function Projects() {
                                     {/* Project Icon/Initial */}
                                     <div
                                         style={{
-                                            width: "80px",
-                                            height: "80px",
-                                            borderRadius: "24px",
+                                            width: "56px",
+                                            height: "56px",
+                                            borderRadius: "16px",
                                             background: "rgba(255,255,255,0.9)",
                                             backdropFilter: "blur(10px)",
                                             display: "flex",
                                             alignItems: "center",
                                             justifyContent: "center",
-                                            fontSize: "32px",
+                                            fontSize: "24px",
                                             fontWeight: 700,
                                             color: "var(--primary)",
-                                            boxShadow: "0 8px 32px rgba(0,0,0,0.1)",
+                                            boxShadow: "0 6px 24px rgba(0,0,0,0.1)",
                                             transform: hoveredId === project.id ? "scale(1.1) rotate(-3deg)" : "scale(1)",
                                             transition: "transform var(--transition-base)",
                                         }}
@@ -107,11 +107,11 @@ export default function Projects() {
                                             onClick={(e) => e.stopPropagation()}
                                             style={{
                                                 position: "absolute",
-                                                top: "16px",
-                                                right: "16px",
-                                                width: "40px",
-                                                height: "40px",
-                                                borderRadius: "12px",
+                                                top: "12px",
+                                                right: "12px",
+                                                width: "32px",
+                                                height: "32px",
+                                                borderRadius: "10px",
                                                 background: "rgba(255,255,255,0.95)",
                                                 backdropFilter: "blur(10px)",
                                                 display: "flex",
@@ -139,13 +139,13 @@ export default function Projects() {
                                     <div
                                         style={{
                                             position: "absolute",
-                                            bottom: "16px",
-                                            left: "16px",
-                                            padding: "6px 12px",
-                                            borderRadius: "8px",
+                                            bottom: "12px",
+                                            left: "12px",
+                                            padding: "4px 10px",
+                                            borderRadius: "6px",
                                             background: "rgba(255,255,255,0.95)",
                                             backdropFilter: "blur(10px)",
-                                            fontSize: "11px",
+                                            fontSize: "10px",
                                             fontWeight: 600,
                                             textTransform: "uppercase",
                                             letterSpacing: "1px",
@@ -157,13 +157,13 @@ export default function Projects() {
                                 </div>
 
                                 {/* Content */}
-                                <div style={{ padding: "24px" }}>
+                                <div style={{ padding: "16px" }}>
                                     <h3
                                         style={{
-                                            fontSize: "20px",
+                                            fontSize: "16px",
                                             fontWeight: 600,
                                             color: "var(--primary)",
-                                            marginBottom: "10px",
+                                            marginBottom: "8px",
                                             letterSpacing: "-0.02em",
                                         }}
                                     >
@@ -171,10 +171,10 @@ export default function Projects() {
                                     </h3>
                                     <p
                                         style={{
-                                            fontSize: "14px",
+                                            fontSize: "13px",
                                             color: "var(--secondary)",
-                                            lineHeight: 1.7,
-                                            marginBottom: "20px",
+                                            lineHeight: 1.6,
+                                            marginBottom: "14px",
                                             display: "-webkit-box",
                                             WebkitLineClamp: 2,
                                             WebkitBoxOrient: "vertical",
@@ -189,11 +189,11 @@ export default function Projects() {
                                         style={{
                                             display: "flex",
                                             flexWrap: "wrap",
-                                            gap: "8px",
+                                            gap: "6px",
                                         }}
                                     >
-                                        {project.tags.slice(0, 4).map((tag) => (
-                                            <span key={tag} className="tag">
+                                        {project.tags.slice(0, 3).map((tag) => (
+                                            <span key={tag} className="tag" style={{ padding: "4px 10px", fontSize: "11px" }}>
                                                 {tag}
                                             </span>
                                         ))}
