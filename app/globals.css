@@ -697,6 +697,11 @@ h6 {
     font-size: 16px !important;
   }
 
+  /* Add spacing for fixed header */
+  section:first-of-type {
+    padding-top: 100px !important;
+  }
+
   /* Header logo */
   header a {
     font-size: 18px !important;
@@ -778,43 +783,61 @@ h6 {
 @media (max-width: 768px) {
   .mobile-menu {
     display: flex !important;
+    background: white !important;
+    border-radius: 12px !important;
+    border: 1px solid var(--border) !important;
+    padding: 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
   }
   
   .mobile-menu a,
-  .mobile-menu button {
-    padding: 12px 16px !important;
+  .mobile-menu .btn-primary {
+    padding: 14px 18px !important;
     width: 100% !important;
-    text-align: left !important;
-    border-radius: 8px !important;
-    border: 1px solid var(--border) !important;
-    background: var(--muted) !important;
-    color: var(--secondary) !important;
+    text-align: center !important;
+    border-radius: 10px !important;
+    border: none !important;
+    color: var(--primary) !important;
     text-decoration: none !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
     transition: all 0.2s !important;
     cursor: pointer !important;
+    background: transparent !important;
   }
   
-  .mobile-menu a:hover,
-  .mobile-menu button:hover {
+  .mobile-menu a:hover {
+    background: var(--muted) !important;
+  }
+  
+  .mobile-menu .btn-primary {
     background: var(--accent) !important;
     color: white !important;
+    margin-top: 4px !important;
+  }
+  
+  .mobile-menu .btn-primary:hover {
+    background: var(--primary) !important;
+    transform: translateY(-1px) !important;
   }
 }
 
 /* Header responsive sizing */
 @media (max-width: 768px) {
   header {
-    padding: 12px 0 !important;
+    padding: 16px 0 !important;
+    background: white !important;
+    border-bottom: 1px solid var(--border) !important;
+    backdrop-filter: none !important;
   }
   
   header .container {
-    padding: 0 16px !important;
+    padding: 0 20px !important;
   }
   
   header a[href="#"] {
-    font-size: 18px !important;
+    font-size: 19px !important;
+    font-weight: 700 !important;
   }
 }
 

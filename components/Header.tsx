@@ -155,10 +155,8 @@ export default function Header() {
             style={{
               display: "none",
               flexDirection: "column",
-              gap: "8px",
-              padding: "20px 0",
-              marginTop: "16px",
-              borderTop: "1px solid var(--border)",
+              gap: "6px",
+              marginTop: "20px",
             }}
           >
             {navLinks.map((link) => (
