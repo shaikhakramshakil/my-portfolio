@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { certifications, cloudSkillsProfile } from "@/lib/data";
 
 // Bolder color gradients for badge backgrounds
@@ -99,11 +98,14 @@ export default function Certifications() {
                                     marginBottom: "14px",
                                     filter: "drop-shadow(0 6px 12px rgba(0,0,0,0.15))",
                                 }}>
-                                    <Image
+                                    <img
                                         src={cert.image}
                                         alt={cert.name}
-                                        fill
-                                        style={{ objectFit: "contain" }}
+                                        style={{ 
+                                            width: "100%",
+                                            height: "100%",
+                                            objectFit: "contain" 
+                                        }}
                                     />
                                 </div>
                             )}

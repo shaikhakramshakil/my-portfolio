@@ -871,3 +871,10 @@ h6 {
     padding: 0 12px !important;
   }
 }
+
+/* Flagship Project Responsive */
+@media (max-width: 768px) {
+  .project-card .preview {
+    height: 200px !important;
+  }
+}

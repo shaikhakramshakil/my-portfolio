@@ -177,14 +177,6 @@ export default function Header() {
                 {link.name}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="btn btn-primary"
-              style={{ marginTop: "8px" }}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact Me
-            </a>
           </div>
         )}
       </div>

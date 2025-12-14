@@ -51,11 +51,18 @@ export default function Projects() {
                         gap: "20px",
                     }}
                 >
-                    {filteredProjects.map((project, index) => (
+                    {filteredProjects.map((project, index) => {
+                        const isFlagship = project.flagship;
+                        
+                        return (
                         <Link
                             key={project.id}
                             href={`/projects/${project.slug}`}
-                            style={{ textDecoration: "none", color: "inherit" }}
+                            style={{ 
+                                textDecoration: "none", 
+                                color: "inherit",
+                                gridColumn: isFlagship ? "1 / -1" : "auto", // Flagship takes full width
+                            }}
                         >
                             <article
                                 className={`project-card animate-fade-in-up animation-delay-${Math.min((index + 1) * 100, 500)}`}
@@ -63,8 +70,40 @@ export default function Projects() {
                                 onMouseLeave={() => setHoveredId(null)}
                                 style={{
                                     cursor: "pointer",
+                                    position: "relative",
+                                    ...(isFlagship && {
+                                        background: "linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%)",
+                                        border: "2px solid",
+                                        borderImageSource: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                                        borderImageSlice: 1,
+                                        boxShadow: "0 8px 32px rgba(102, 126, 234, 0.15), 0 0 0 1px rgba(102, 126, 234, 0.1)",
+                                    }),
                                 }}
                             >
+                                {/* Flagship Badge */}
+                                {isFlagship && (
+                                    <div
+                                        style={{
+                                            position: "absolute",
+                                            top: "-1px",
+                                            left: "50%",
+                                            transform: "translateX(-50%)",
+                                            background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                                            color: "white",
+                                            padding: "6px 20px",
+                                            borderRadius: "0 0 12px 12px",
+                                            fontSize: "11px",
+                                            fontWeight: 700,
+                                            textTransform: "uppercase",
+                                            letterSpacing: "1.5px",
+                                            zIndex: 10,
+                                            boxShadow: "0 4px 12px rgba(102, 126, 234, 0.3)",
+                                        }}
+                                    >
+                                        ⭐ Flagship Project
+                                    </div>
+                                )}
+                                
                                 {/* Preview Area */}
                                 <div
                                     className="preview"
@@ -75,6 +114,9 @@ export default function Projects() {
                                         justifyContent: "center",
                                         overflow: "hidden",
                                         background: project.image ? "#fafafa" : project.gradient,
+                                        ...(isFlagship && {
+                                            height: "320px", // Taller for flagship
+                                        }),
                                     }}
                                 >
                                     {/* Project Image or Initial */}
@@ -278,7 +320,7 @@ export default function Projects() {
                                 </div>
                             </article>
                         </Link>
-                    ))}
+                    )})}
                 </div>
             </div>
         </section>

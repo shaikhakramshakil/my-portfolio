@@ -23,6 +23,7 @@ export interface Project {
   github?: string;
   live?: string;
   featured: boolean;
+  flagship?: boolean; // Special flag for the main showcase project
   year: string;
   status: 'Completed' | 'In Progress' | 'Maintained';
   features: string[];
@@ -108,6 +109,34 @@ export const experiences: Experience[] = [
 
 // Projects data with detailed information
 export const projects: Project[] = [
+  {
+    id: "0",
+    slug: "codeyapp",
+    title: "Code Yapp",
+    description: "Privacy-first ephemeral chat service. Secure, temporary, and anonymous chat rooms that auto-delete after 2 hours. No accounts, no tracking, no permanent footprint.",
+    longDescription: "Code Yapp is a free, web-based chat service focused on privacy and efficiency. It provides secure, temporary, and anonymous chat rooms that are automatically deleted after two hours. It's designed for anyone needing a quick, 'off the record' way to have a conversation, share code, or collaborate without creating a permanent digital footprint. Built with a privacy-first philosophy where the core architecture—not just a feature—guarantees that conversations disappear.",
+    tags: ["Next.js", "Redis", "SSE", "Tailwind", "PWA"],
+    gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    category: "web",
+    image: "/proj img/codeyapp.png",
+    live: "https://codeyapp.tech",
+    featured: true,
+    flagship: true,
+    year: "2025",
+    status: "Completed",
+    features: [
+      "Ephemeral by design - all chats auto-delete after 2 hours",
+      "100% anonymous - no sign-up or personal info required",
+      "Password-protected private rooms for extra security",
+      "Real-time messaging with SSE (typing indicators, live user lists)",
+      "Simple admin controls (first user becomes admin)",
+      "Progressive Web App - installable on mobile & desktop",
+      "Powered by Redis via Upstash for serverless performance",
+      "Zero permanent data storage - privacy by architecture",
+    ],
+    challenges: "The biggest challenge was designing a system where data deletion isn't just a feature but the fundamental architecture. Every technical decision—from using Redis with TTL to implementing Server-Sent Events—was made to ensure that conversations truly disappear. Building real-time functionality without WebSockets while maintaining simplicity was another interesting technical constraint.",
+    outcome: "Code Yapp stands as a direct solution to digital permanence. In a world where everything is recorded and archived, this project proves you can build a powerful collaboration tool without user accounts, endless settings, or long-term data storage. It respects user privacy by design, demonstrating that effective tools can be both simple and privacy-respecting.",
+  },
   {
     id: "1",
     slug: "zerogpu",
