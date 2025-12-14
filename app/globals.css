@@ -508,18 +508,39 @@ h6 {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  :root {
+    --section-padding: 80px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --section-padding: 64px;
     --grid-size: 40px;
   }
 
+  html {
+    font-size: 15px;
+  }
+
   .section-title {
-    font-size: 26px;
+    font-size: 28px;
   }
 
   .section-header {
     margin-bottom: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .section-link {
+    align-self: flex-start;
   }
 
   .card {
@@ -528,17 +549,180 @@ h6 {
   }
 
   .project-card .preview {
-    height: 180px;
+    height: 160px;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-menu {
+    display: flex !important;
+  }
+
+  /* Hero section mobile */
+  .hero-content h1 {
+    font-size: 32px !important;
+  }
+
+  .hero-content p {
+    font-size: 16px !important;
+  }
+
+  /* Grid mobile */
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important;
+  }
+
+  /* Experience cards */
+  .experience-card {
+    padding: 20px !important;
+  }
+
+  /* Blog cards */
+  .article-card {
+    padding: 20px !important;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  :root {
+    --section-padding: 48px;
+  }
+
   .container {
     padding: 0 16px;
   }
 
+  .section-title {
+    font-size: 24px;
+  }
+
   .btn {
     padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px !important;
+  }
+
+  h2 {
+    font-size: 22px !important;
+  }
+
+  h3 {
+    font-size: 18px !important;
+  }
+
+  p {
+    font-size: 15px !important;
+  }
+
+  /* Project card grid - single column */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .project-card .preview {
+    height: 200px !important;
+  }
+
+  /* Experience grid */
+  .experience-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Blog grid */
+  .blog-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .article-card {
+    padding: 16px !important;
+  }
+
+  /* Stats bar mobile */
+  .stats-bar {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Features grid */
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* CTA buttons */
+  .cta-buttons {
+    flex-direction: column !important;
+  }
+
+  .cta-buttons a {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 40px;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  h1 {
+    font-size: 24px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  h3 {
+    font-size: 16px !important;
+  }
+
+  /* Header logo */
+  header a {
+    font-size: 18px !important;
+  }
+
+  /* Filter buttons */
+  .filter-btn {
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+  }
+
+  /* Tech icons carousel */
+  .carousel-track {
+    gap: 16px !important;
+  }
+
+  .tech-icon {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  /* Tags */
+  .tag {
+    padding: 4px 8px !important;
+    font-size: 10px !important;
+  }
+
+  /* Section header */
+  .section-header {
+    flex-direction: column !important;
+  }
+
+  .section-link {
+    font-size: 12px !important;
   }
 }
 
