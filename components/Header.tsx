@@ -119,12 +119,14 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             style={{
               display: "none",
-              background: "white",
+              background: "var(--muted)",
               border: "1px solid var(--border)",
-              padding: "10px",
-              borderRadius: "10px",
+              padding: "8px 12px",
+              borderRadius: "8px",
               cursor: "pointer",
               color: "var(--primary)",
+              alignItems: "center",
+              justifyContent: "center",
             }}
             className="mobile-menu-btn"
             aria-label="Toggle menu"
