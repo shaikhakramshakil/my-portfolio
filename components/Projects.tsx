@@ -72,11 +72,10 @@ export default function Projects() {
                                     cursor: "pointer",
                                     position: "relative",
                                     ...(isFlagship && {
-                                        background: "linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%)",
-                                        border: "2px solid",
-                                        borderImageSource: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                                        borderImageSlice: 1,
-                                        boxShadow: "0 8px 32px rgba(102, 126, 234, 0.15), 0 0 0 1px rgba(102, 126, 234, 0.1)",
+                                        background: "linear-gradient(135deg, rgba(14, 165, 233, 0.04) 0%, rgba(6, 182, 212, 0.04) 100%)",
+                                        border: "2px solid var(--accent)",
+                                        borderRadius: "20px",
+                                        boxShadow: "0 8px 32px rgba(14, 165, 233, 0.12), 0 0 0 1px rgba(14, 165, 233, 0.08)",
                                     }),
                                 }}
                             >
@@ -85,22 +84,26 @@ export default function Projects() {
                                     <div
                                         style={{
                                             position: "absolute",
-                                            top: "-1px",
-                                            left: "50%",
-                                            transform: "translateX(-50%)",
-                                            background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                                            top: "16px",
+                                            right: "16px",
+                                            background: "var(--accent)",
                                             color: "white",
-                                            padding: "6px 20px",
-                                            borderRadius: "0 0 12px 12px",
-                                            fontSize: "11px",
+                                            padding: "8px 16px",
+                                            borderRadius: "50px",
+                                            fontSize: "12px",
                                             fontWeight: 700,
-                                            textTransform: "uppercase",
-                                            letterSpacing: "1.5px",
+                                            letterSpacing: "0.5px",
                                             zIndex: 10,
-                                            boxShadow: "0 4px 12px rgba(102, 126, 234, 0.3)",
+                                            boxShadow: "0 4px 12px rgba(14, 165, 233, 0.25)",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            gap: "6px",
                                         }}
                                     >
-                                        ⭐ Flagship Project
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                        Featured
                                     </div>
                                 )}
                                 

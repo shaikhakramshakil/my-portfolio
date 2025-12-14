@@ -214,7 +214,7 @@ export default function Hero() {
                     style={{
                         fontSize: "15px",
                         color: "var(--secondary)",
-                        marginBottom: "48px",
+                        marginBottom: "20px",
                         maxWidth: "500px",
                         marginLeft: "auto",
                         marginRight: "auto",
@@ -222,6 +222,73 @@ export default function Hero() {
                 >
                     {personalInfo.bio}
                 </p>
+
+                {/* Flagship Project Highlight */}
+                <a
+                    href="https://codeyapp.tech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="animate-fade-in-up animation-delay-350"
+                    style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "8px",
+                        padding: "10px 20px",
+                        background: "linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%)",
+                        border: "1px solid rgba(14, 165, 233, 0.2)",
+                        borderRadius: "100px",
+                        marginBottom: "40px",
+                        textDecoration: "none",
+                        transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.background = "linear-gradient(135deg, rgba(14, 165, 233, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%)";
+                        e.currentTarget.style.transform = "translateY(-2px)";
+                        e.currentTarget.style.boxShadow = "0 8px 24px rgba(14, 165, 233, 0.15)";
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.background = "linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%)";
+                        e.currentTarget.style.transform = "translateY(0)";
+                        e.currentTarget.style.boxShadow = "none";
+                    }}
+                >
+                    <span style={{ 
+                        fontSize: "13px", 
+                        color: "var(--secondary)", 
+                        fontWeight: 500 
+                    }}>
+                        Creator of
+                    </span>
+                    <span style={{ 
+                        fontSize: "14px", 
+                        color: "var(--accent)", 
+                        fontWeight: 700,
+                        letterSpacing: "-0.02em",
+                    }}>
+                        @codeyapp
+                    </span>
+                    <span style={{
+                        fontSize: "11px",
+                        color: "white",
+                        background: "var(--accent)",
+                        padding: "3px 8px",
+                        borderRadius: "50px",
+                        fontWeight: 600,
+                    }}>
+                        LIVE
+                    </span>
+                    <svg 
+                        width="14" 
+                        height="14" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="var(--accent)" 
+                        strokeWidth="2"
+                        style={{ marginLeft: "2px" }}
+                    >
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </a>
 
                 {/* CTA Buttons */}
                 <div
