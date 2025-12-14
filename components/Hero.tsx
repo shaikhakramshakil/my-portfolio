@@ -174,26 +174,26 @@ export default function Hero() {
                 <h1
                     className="animate-fade-in-up animation-delay-100 text-balance"
                     style={{
-                        fontSize: "clamp(36px, 6vw, 64px)",
-                        fontWeight: 700,
-                        lineHeight: 1.1,
-                        marginBottom: "24px",
+                        fontSize: "clamp(42px, 6.5vw, 72px)",
+                        fontWeight: 800,
+                        lineHeight: 1.15,
+                        marginBottom: "28px",
                         color: "var(--primary)",
-                        letterSpacing: "-0.03em",
+                        letterSpacing: "-0.04em",
+                        maxWidth: "950px",
+                        margin: "0 auto 28px",
                     }}
                 >
-                    Just a developer sharing
-                    <br />
+                    Building Intelligent &{" "}
                     <span
                         style={{
-                            fontStyle: "italic",
-                            background: "linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%)",
+                            background: "linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%)",
                             WebkitBackgroundClip: "text",
                             WebkitTextFillColor: "transparent",
                             backgroundClip: "text",
                         }}
                     >
-                        what I know & what I learn.
+                        Decentralized Applications
                     </span>
                 </h1>
 
@@ -201,26 +201,39 @@ export default function Hero() {
                 <p
                     className="animate-fade-in-up animation-delay-200"
                     style={{
-                        fontSize: "17px",
+                        fontSize: "16px",
                         color: "var(--secondary)",
-                        marginBottom: "8px",
-                        fontWeight: 500,
+                        marginBottom: "18px",
+                        fontWeight: 600,
+                        letterSpacing: "0.5px",
                     }}
                 >
-                    {personalInfo.name} • {personalInfo.title}
+                    App Dev | Blockchain | AI | Open Source
+                </p>
+                <p
+                    className="animate-fade-in-up animation-delay-250"
+                    style={{
+                        fontSize: "16px",
+                        color: "var(--secondary)",
+                        marginBottom: "12px",
+                        fontWeight: 400,
+                        maxWidth: "600px",
+                        margin: "0 auto 12px",
+                        lineHeight: 1.6,
+                    }}
+                >
+                    Creating robust digital solutions that are secure, smart, and scalable.
                 </p>
                 <p
                     className="animate-fade-in-up animation-delay-300"
                     style={{
-                        fontSize: "15px",
-                        color: "var(--secondary)",
-                        marginBottom: "20px",
-                        maxWidth: "500px",
-                        marginLeft: "auto",
-                        marginRight: "auto",
+                        fontSize: "17px",
+                        color: "var(--accent)",
+                        marginBottom: "36px",
+                        fontWeight: 600,
                     }}
                 >
-                    {personalInfo.bio}
+                    Let's build the future together.
                 </p>
 
                 {/* Flagship Project Highlight */}

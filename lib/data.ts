@@ -30,6 +30,7 @@ export interface Project {
   challenges?: string;
   outcome?: string;
   image?: string;
+  backgroundColor?: string; // Background color for image preview
 }
 
 export interface Certification {
@@ -119,6 +120,7 @@ export const projects: Project[] = [
     gradient: "linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%)",
     category: "web",
     image: "/proj img/codeyapp.jpg",
+    backgroundColor: "#0e1118",
     live: "https://codeyapp.tech",
     featured: true,
     flagship: true,
@@ -147,6 +149,7 @@ export const projects: Project[] = [
     gradient: "var(--gradient-yellow)",
     category: "tool",
     image: "/proj img/zero-gpu.png",
+    backgroundColor: "#212942",
     github: "https://github.com/shaikhakramshakil/Zero-GPU",
     featured: true,
     year: "2025",
@@ -249,6 +252,7 @@ export const projects: Project[] = [
     gradient: "var(--gradient-pink)",
     category: "web",
     image: "/proj img/Vidyalytics.png",
+    backgroundColor: "#f0f5f8",
     github: "https://github.com/shaikhakramshakil/Vidyalytics",
     live: "https://vidyalytics.vercel.app",
     featured: false,
@@ -274,6 +278,7 @@ export const projects: Project[] = [
     gradient: "var(--gradient-teal)",
     category: "web",
     image: "/proj img/healthportal.png",
+    backgroundColor: "#eaf7f5",
     github: "https://github.com/shaikhakramshakil/Health-Portal-AI",
     live: "https://healthportalai.netlify.app/",
     featured: false,
@@ -324,6 +329,7 @@ export const projects: Project[] = [
     gradient: "var(--gradient-red)",
     category: "tool",
     image: "/proj img/healthbot.png",
+    backgroundColor: "#eef7f9",
     featured: false,
     year: "2025",
     status: "Completed",

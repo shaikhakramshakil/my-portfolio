@@ -116,9 +116,9 @@ export default function Projects() {
                                         alignItems: "center",
                                         justifyContent: "center",
                                         overflow: "hidden",
-                                        background: project.image ? "#fafafa" : project.gradient,
+                                        background: project.backgroundColor || (project.image ? "#fafafa" : project.gradient),
                                         ...(isFlagship && {
-                                            height: "320px", // Taller for flagship
+                                            height: "320px",
                                         }),
                                     }}
                                 >
@@ -136,15 +136,6 @@ export default function Projects() {
                                                     padding: "16px",
                                                     transform: hoveredId === project.id ? "scale(1.03)" : "scale(1)",
                                                     transition: "transform 0.4s ease",
-                                                }}
-                                            />
-                                            {/* Subtle gradient overlay */}
-                                            <div
-                                                style={{
-                                                    position: "absolute",
-                                                    inset: 0,
-                                                    background: "linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.03) 100%)",
-                                                    pointerEvents: "none",
                                                 }}
                                             />
                                         </>
